@@ -86,9 +86,9 @@ function onUserShoot(shootType) {
   }
   isComputerTurn = true;
 
-  let userButtons = documesnt.getElementsByClassName('btn-user');
+  let userButtons = document.getElementsByClassName('btn-user');
 
-  for ( let i = 0 ; i < userButtons.length ; i++) {
+  for ( let i = 0 ; i < userButtons.length ; i ++) {
     userButtons[i].disabled = true;
   }
 
@@ -106,5 +106,20 @@ function onUserShoot(shootType) {
   let shootLeftElement = document.getElementById('shots-left');
   shootLeftElement.innerHTML = shootLeft;
 
+  // 조건문을 적용 -> shootLeft === 0일 때 게임 종료
+
+  if (shootLeft === 0) {
+    // 사용자 이겼을 때 - 졌을 때 - 비겼을 때
+    if(comScore < userScore) {
+      alert(`${userScore - comScore} 점 차이로 플레이어 승!`);
+      textElement.innerHTML = (`${userScore - comScore} 점 차이로 플레이어 승!`)
+    } else if(comScore > userScore) {
+      alert(`${comScore - userScore} 점 차이로 플레이어 패...`);
+      textElement.innerHTML = (`${comScore - userScore} 점 차이로 플레이어 패...`)
+    } else{
+      alert(`${userScore} 점으로 무승부!`);
+      textElement.innerHTML = (`${userScore} 점으로 무승부!`)
+    } 
+  }
 }
 
