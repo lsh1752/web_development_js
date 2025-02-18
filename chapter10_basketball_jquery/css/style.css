@@ -4,9 +4,6 @@
   text-align: center;
   padding: 2px;
   color: #fff;
-  border: 1px solid black;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
 }
 
 .div-scoreboard.inner {
@@ -70,12 +67,15 @@ button {
   text-align: center;
   padding: 2px;
   color: #fff;
-  border: 1px solid black;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
 }
 
 .div-control-name {
   font-size: 20px;
   margin-bottom: 5px;
+}
+
+body {
+  width: 404px;
+  border: 5px solid #003d15;
+  border-radius: 4px;
 }

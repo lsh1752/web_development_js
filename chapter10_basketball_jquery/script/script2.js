@@ -17,14 +17,7 @@ let game = {
 
 
 function showText(s) {
-  // let textElement = document.getElementById('text');
-  // $textElement.innerHTML = s;
   let $textElement = $('#text')
-  // 기존 깜빡거리는 예시
-  // $textElement.fadeOut();
-  // $textElement.html(s);
-  // $textElement.fadeIn();
-  // 콜백 함수를 통한 개선
   $textElement.fadeOut(300, function() {
     $textElement.html(s);
     $textElement.fadeIn(100);
@@ -44,19 +37,28 @@ function updateComScore(score) {
   // 플러그인 적용 후
   computer.score += score;
   let $comScoreElement = $('#computer-score')
-
   $comScoreElement.animateNumber({
     number: computer.score
   });
 }
 
 function updateUserScore(score) {
+  // 바닐라 자바스크립트
   // let userScoreElement = document.getElementById('user-score');
   // user.score += score;
   // $userScoreElement.innerHTML = user.score;
-  let $userScoreElement = $('#user-score')
+
+  // 제이쿼리 적용
+  // let $userScoreElement = $('#user-score')
+  // user.score += score;
+  // $userScoreElement.html(user.score);
+
+  // 제이쿼리 플러그인 적용
   user.score += score;
-  $userScoreElement.html(user.score);
+  let $userScoreElement = $('#user-score');
+  $userScoreElement.animateNumber({
+    number: user.score
+  });
 } 
 
 function disableComButton(flag) {
