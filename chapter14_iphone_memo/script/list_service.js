@@ -1,12 +1,12 @@
 function loadList() {
-  let boardDates = !!localStorage.getItem("boardDatas")
+  let boardDatas = !!localStorage.getItem("boardDatas")
   ? JSON.parse(localStorage.getItem("boardDatas"))
   : [];
 
-  const boardlist = document.querySelector('board-list-container');
-  boardlist.innerHTML = boardDates.map(data => `
+  const boardList = document.querySelector('.board-list-container');
+  boardList.innerHTML = boardDatas.map(data => `
     <li class="board-box">
-      <header class='board-header>
+      <header class="board-header">
         <h1>${data.title}(${data.writer})</h1>
       </header>
       <main class="board-main">
